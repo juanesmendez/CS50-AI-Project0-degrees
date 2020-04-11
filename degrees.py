@@ -105,7 +105,7 @@ def shortest_path(source, target):
     while True:
         # If nothing left in frontier, then no path
         if frontier.empty():
-            raise Exception("no solution")
+            return None
 
         node = frontier.remove()
         #print(f"Exploring {node.state}")
@@ -129,9 +129,6 @@ def shortest_path(source, target):
                     path.reverse()
                     return path
                 frontier.add(child)
-
-
-    raise NotImplementedError
 
 
 def person_id_for_name(name):
